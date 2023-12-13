@@ -1,0 +1,33 @@
+@import "../../../styles//variables";
+
+.section-how-step {
+  flex-direction: column;
+  .icon-container {
+    margin: 6rem;
+    width: 8rem;
+    height: 8rem;
+    padding: 2.8rem;
+    border-radius: 2.4rem;
+    position: relative;
+
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .icon-container.blue {
+    background-color: $blue-box;
+  }
+  .icon-container.purple {
+    background-color: $purple-box;
+  }
+  .icon-container.pink {
+    background-color: $pink-box;
+  }
+  .icon-container.green {
+    background-color: $green-box;
+  }
+}
