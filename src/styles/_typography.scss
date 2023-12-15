@@ -66,9 +66,11 @@ h4 {
 
 p {
   font-family: "Poppins", sans-serif;
+  @include commonStyles(400, 1.6rem, 2.4rem, var(--text-secondary));
 }
 
-.header-logo path {
+.header-logo path,
+.new-feature path {
   fill: var(--text-primary);
 }
 
@@ -125,6 +127,6 @@ button > span {
 }
 @media screen and (min-width: 1880px) {
   html {
-    font-size: 100%;
+    font-size: 60%;
   }
 }

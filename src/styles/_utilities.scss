@@ -22,6 +22,43 @@
   width: 100% !important;
 }
 
+.normal {
+  @include commonStyles(600, 1.6rem, 2.4rem, var(--text-secondary));
+}
+
+.bold {
+  @include commonStyles(700, 1.6rem, 1.6rem, var(--text-secondary));
+}
+
+.small-light {
+  @include commonStyles(400, 1.4rem, 2.4rem, var(--text-neutral));
+}
+.small-bold {
+  @include commonStyles(700, 1.2rem, 1.2rem, var(--text-secondary));
+}
+
+.icon-container.blue {
+  background-color: $blue-box;
+}
+.icon-container.purple {
+  background-color: $purple-box;
+}
+.icon-container.pink {
+  background-color: $pink-box;
+}
+.icon-container.green {
+  background-color: $green-box;
+}
+
+.green {
+  color: $green-box;
+}
+
+.strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1024px) {
   .container {
     width: 88%;
@@ -36,13 +73,13 @@
 
 @media screen and (max-width: 425px) {
   .container {
-    max-width: 65%;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 375px) {
   .container {
-    max-width: 80%;
+    width: 90%;
   }
 }
 

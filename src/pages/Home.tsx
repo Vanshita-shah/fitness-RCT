@@ -1,4 +1,3 @@
-import { Button } from "antd";
 import FeacturedIcons from "../components/featured-section/FeacturedIcons";
 import ArrowDown from "../components/reusable-section/ArrowDown";
 import SectionContent from "../components/reusable-section/SectionContent";
@@ -10,6 +9,9 @@ import Hero from "../assets/images/hero-section/hero.png";
 import Fitness from "../assets/images/fitness-section/fitness.png";
 import Watch from "../assets/images/book-class-section/watch.png";
 import SectionCard from "../components/book-class-section/SectionCard";
+import SectionHeading from "../components/section-heading/SectionHeading";
+import SectionFeatures from "../components/workout-features/SectionFeatures";
+import ServiceImg from "../assets/images/services-section/service.png";
 
 const Home = () => {
   return (
@@ -29,7 +31,7 @@ const Home = () => {
         <ArrowDown />
 
         <section className="container flex section-featured my-section">
-          <div className="section-featured-heading">
+          <div className="section-featured-heading normal">
             Trusted by more than 2M users worldwide
           </div>
           <FeacturedIcons />
@@ -53,6 +55,25 @@ const Home = () => {
           <div className="container flex py-96">
             <SectionImg src={Watch} alt="a" />
             <SectionCard />
+          </div>
+        </section>
+
+        <section className="container flex section-new-workouts my-section">
+          <SectionHeading
+            title="New workouts added every week"
+            heading="A new fitness experience for everyone"
+          />
+          <SectionFeatures />
+        </section>
+        <section className="container flex section-new-workouts my-section">
+          <SectionHeading
+            title="our services"
+            heading="Simple, powerful, easy-to-use"
+            tagline="Track your workouts, get better results, and be the best version of you. Less thinking, more lifting."
+          />
+
+          <div className="bottom-section">
+            <SectionImg src={ServiceImg} alt="service scene video" />
           </div>
         </section>
       </Layout>
