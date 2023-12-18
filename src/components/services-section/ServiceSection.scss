@@ -1,0 +1,22 @@
+.section-services{
+    flex-direction: column;
+
+    .bottom-section{
+        gap: 4.8rem;
+        .services-container{
+           min-width: 30%; 
+           .services{
+               max-width: 25rem; 
+           }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .section-services{
+        .bottom-section{
+            flex-direction: column-reverse;
+        }
+    }
+    
+}

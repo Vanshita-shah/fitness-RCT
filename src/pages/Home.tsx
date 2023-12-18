@@ -12,8 +12,27 @@ import SectionCard from "../components/book-class-section/SectionCard";
 import SectionHeading from "../components/section-heading/SectionHeading";
 import SectionFeatures from "../components/workout-features/SectionFeatures";
 import ServiceImg from "../assets/images/services-section/service.png";
+import Services from "../components/services-section/Services";
+import { useEffect, useState } from "react";
 
 const Home = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      const mobileDevice = window.matchMedia("(max-width: 767px)");
+      setIsMobile(mobileDevice.matches);
+    };
+
+    checkIsMobile();
+
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
+
   return (
     <>
       <Layout>
@@ -65,14 +84,16 @@ const Home = () => {
           />
           <SectionFeatures />
         </section>
-        <section className="container flex section-new-workouts my-section">
-          <SectionHeading
-            title="our services"
-            heading="Simple, powerful, easy-to-use"
-            tagline="Track your workouts, get better results, and be the best version of you. Less thinking, more lifting."
-          />
 
-          <div className="bottom-section">
+        <section className="container flex section-services my-section">
+          
+          <SectionHeading
+            title={isMobile ?"our services":"Fitness Pro"}
+            heading={isMobile ? "Our Features" : "Simple, powerful, easy-to-use"}
+            tagline={isMobile ?"Stacks is a production-ready library of stackable content blocks built in React Native.":"Track your workouts, get better results, and be the best version of you. Less thinking, more lifting."}
+          />
+          <div className="bottom-section flex">
+            <Services/>
             <SectionImg src={ServiceImg} alt="service scene video" />
           </div>
         </section>
